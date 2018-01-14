@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import sys
+
+def migratoryBirds(n, ar):
+    counter = []
+    final = []
+    max_type = 0
+    a1 = []
+    for i in range(len(ar)):
+        if ar[i] not in a1:
+            a = (ar.count(ar[i]))
+            a1.append(ar[i])
+            counter.append(a)
+    b = max(counter)
+    if counter.count(b) > 1:
+        for i in range(len(counter)):
+            if counter[i] ==b:
+                final.append(a1.index(a1[i]))
+        return(min(final))
+    else:
+        a2 = counter.index(b)
+        return(a1[a2])
