@@ -1,0 +1,22 @@
+#!/bin/python3
+
+import sys
+
+def bonAppetit(n, k, b, ar):
+    # Complete this function
+    total_sum = 0
+    for i in range(n):
+        total_sum+=ar[i]
+    
+    if (total_sum - ar[k])/2 ==b:
+        return("Bon Appetit")
+    else:
+        return(int(b-((total_sum -ar[k])/2)))
+        
+
+n, k = input().strip().split(' ')
+n, k = [int(n), int(k)]
+ar = list(map(int, input().strip().split(' ')))
+b = int(input().strip())
+result = bonAppetit(n, k, b, ar)
+print(result)
