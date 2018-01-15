@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import sys
+
+def sockMerchant(n, ar):
+    # Complete this fn
+    pair_socks=0
+    a = []
+    b=[]
+    for i in range(n):
+        if ar.count(ar[i])> 2 and ar.count(ar[i])%2!=0 and ar[i] not in a:
+            pair_socks=int((ar.count(ar[i])-1)/2)
+            b.append(pair_socks)
+            pair_socks+=1
+            a.append(ar[i])
+        if ar.count(ar[i])>=2 and ar.count(ar[i])%2==0 and ar[i] not in a:
+            pair_socks=int(ar.count(ar[i])/2)
+            a.append(ar[i])
+            b.append(pair_socks)
+    return(sum(b))
+
+n = int(input().strip())
+ar = list(map(int, input().strip().split(' ')))
+result = sockMerchant(n, ar)
+print(result)
