@@ -1,2 +1,2 @@
 # hackerrank-exercise
-Hackerrank practise solutions
+Hackerrank practice solutions
